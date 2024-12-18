@@ -65,6 +65,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Install Python 2.7
+        uses: LizardByte/setup-python-action@master
+        with: 
+          python-version: '2.7'
+
       - name: Install dependencies
         shell: bash
         run: |
@@ -110,6 +115,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Install Python 2.7
+        uses: LizardByte/setup-python-action@master
+        with: 
+          python-version: '2.7'
 
       - name: Install dependencies
         shell: bash
