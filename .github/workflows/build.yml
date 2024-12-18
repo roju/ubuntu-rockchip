@@ -7,8 +7,10 @@ run-name: Build
 
 jobs:
   rootfs:
-    runs-on: ubuntu-latest
-    name: Build rootfs 
+    runs-on: self-hosted
+    container:
+      image: ubuntu:24.04
+    name: Build rootfs
     strategy:
         matrix:
           flavor:
@@ -46,7 +48,9 @@ jobs:
             if-no-files-found: error
 
   kernel:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
+    container:
+      image: ubuntu:24.04
     name: Build kernel 
     strategy:
         matrix:
@@ -83,7 +87,9 @@ jobs:
             if-no-files-found: error
 
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
+    container:
+      image: ubuntu:24.04
     needs: [rootfs, kernel]
     name: Build image 
 
