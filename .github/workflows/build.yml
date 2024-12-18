@@ -21,21 +21,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install Python 2.7
-        uses: LizardByte/setup-python-action@master
-        with: 
-          python-version: '2.7'
-
       - name: Install dependencies
         shell: bash
         run: |
           apt-get update && apt-get purge needrestart -y && apt-get upgrade -y
-          apt-get install -y git build-essential gcc-aarch64-linux-gnu bison \
+          apt-get install -y git curl build-essential gcc-aarch64-linux-gnu bison \
           u-boot-tools binfmt-support \
           debootstrap flex libssl-dev bc rsync kmod cpio xz-utils fakeroot parted \
           udev dosfstools uuid-runtime git-lfs device-tree-compiler python3 \
           python-is-python3 fdisk bc debhelper python3-pyelftools python3-setuptools \
           python3-pkg-resources swig libfdt-dev libpython3-dev dctrl-tools
+
+      - name: Install Python 2.7
+        uses: LizardByte/setup-python-action@master
+        with: 
+          python-version: '2.7'
 
       - name: Checkout LFS
         shell: bash
@@ -65,22 +65,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install Python 2.7
-        uses: LizardByte/setup-python-action@master
-        with: 
-          python-version: '2.7'
-
       - name: Install dependencies
         shell: bash
         run: |
           apt-get update && apt-get purge needrestart -y && apt-get upgrade -y
-          apt-get install -y git build-essential gcc-aarch64-linux-gnu bison \
+          apt-get install -y git curl build-essential gcc-aarch64-linux-gnu bison \
           u-boot-tools binfmt-support \
           debootstrap flex libssl-dev bc rsync kmod cpio xz-utils fakeroot parted \
           udev dosfstools uuid-runtime git-lfs device-tree-compiler python3 \
           python-is-python3 fdisk bc debhelper python3-pyelftools python3-setuptools \
           python3-pkg-resources swig libfdt-dev libpython3-dev
-          
+
+      - name: Install Python 2.7
+        uses: LizardByte/setup-python-action@master
+        with: 
+          python-version: '2.7'
+
       - name: Checkout LFS
         shell: bash
         run: git lfs fetch && git lfs checkout
@@ -116,21 +116,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install Python 2.7
-        uses: LizardByte/setup-python-action@master
-        with: 
-          python-version: '2.7'
-
       - name: Install dependencies
         shell: bash
         run: |
           apt-get update && apt-get purge needrestart -y && apt-get upgrade -y
-          apt-get install -y git build-essential gcc-aarch64-linux-gnu bison \
+          apt-get install -y git curl build-essential gcc-aarch64-linux-gnu bison \
           u-boot-tools binfmt-support \
           debootstrap flex libssl-dev bc rsync kmod cpio xz-utils fakeroot parted \
           udev dosfstools uuid-runtime git-lfs device-tree-compiler python3 \
           python-is-python3 fdisk bc debhelper python3-pyelftools python3-setuptools \
           python3-pkg-resources swig libfdt-dev libpython3-dev dctrl-tools
+
+      - name: Install Python 2.7
+        uses: LizardByte/setup-python-action@master
+        with: 
+          python-version: '2.7'
 
       - name: Checkout LFS
         shell: bash
