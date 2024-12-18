@@ -21,10 +21,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Checkout LFS
-        shell: bash
-        run: git lfs fetch && git lfs checkout
-
       - name: Install dependencies
         shell: bash
         run: |
@@ -35,6 +31,10 @@ jobs:
           udev dosfstools uuid-runtime git-lfs device-tree-compiler python2 python3 \
           python-is-python3 fdisk bc debhelper python3-pyelftools python3-setuptools \
           python3-distutils python3-pkg-resources swig libfdt-dev libpython3-dev dctrl-tools
+
+      - name: Checkout LFS
+        shell: bash
+        run: git lfs fetch && git lfs checkout
 
       - name: Build
         shell: bash
@@ -60,10 +60,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Checkout LFS
-        shell: bash
-        run: git lfs fetch && git lfs checkout
-
       - name: Install dependencies
         shell: bash
         run: |
@@ -74,6 +70,10 @@ jobs:
           udev dosfstools uuid-runtime git-lfs device-tree-compiler python2 python3 \
           python-is-python3 fdisk bc debhelper python3-pyelftools python3-setuptools \
           python3-distutils python3-pkg-resources swig libfdt-dev libpython3-dev
+          
+      - name: Checkout LFS
+        shell: bash
+        run: git lfs fetch && git lfs checkout
 
       - name: Build
         shell: bash
@@ -106,10 +106,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Checkout LFS
-        shell: bash
-        run: git lfs fetch && git lfs checkout
-
       - name: Install dependencies
         shell: bash
         run: |
@@ -120,6 +116,10 @@ jobs:
           udev dosfstools uuid-runtime git-lfs device-tree-compiler python2 python3 \
           python-is-python3 fdisk bc debhelper python3-pyelftools python3-setuptools \
           python3-distutils python3-pkg-resources swig libfdt-dev libpython3-dev dctrl-tools
+
+      - name: Checkout LFS
+        shell: bash
+        run: git lfs fetch && git lfs checkout
 
       - name: Checkout rootfs
         uses: actions/download-artifact@v4.1.2
