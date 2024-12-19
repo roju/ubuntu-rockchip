@@ -22,6 +22,9 @@ function config_image_hook__radxa-zero3() {
             echo "blacklist aic8800_btlpm"
         ) > "${rootfs}/etc/modprobe.d/aic8800.conf"
 
+        chroot $chroot_dir apt-get install -y software-properties-common
+        chroot $chroot_dir add-apt-repository ppa:jjriek/rockchip
+
         # Install AIC8800 SDIO WiFi and Bluetooth DKMS
         chroot "${rootfs}" apt-get -y install dkms aic8800-firmware aic8800-sdio-dkms
 
