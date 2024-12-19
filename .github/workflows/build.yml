@@ -103,7 +103,7 @@ jobs:
         shell: bash
         run: |
           apt-get update && apt-get purge needrestart -y && apt-get upgrade -y
-          apt-get install -y git build-essential \
+          apt-get install -y git build-essential software-properties-common \
           gcc-aarch64-linux-gnu bison u-boot-tools binfmt-support \
           debootstrap flex libssl-dev bc rsync kmod cpio xz-utils fakeroot parted \
           udev dosfstools uuid-runtime git-lfs device-tree-compiler python3 \
