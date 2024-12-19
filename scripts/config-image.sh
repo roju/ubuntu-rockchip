@@ -133,9 +133,6 @@ setup_mountpoint $chroot_dir
 
 # Update packages
 chroot $chroot_dir apt-get update
-chroot $chroot_dir apt-get install -y software-properties-common
-chroot $chroot_dir add-apt-repository ppa:jjriek/rockchip
-chroot $chroot_dir apt-get update
 chroot $chroot_dir apt-get -y upgrade
     
 # Run config hook to handle board specific changes
