@@ -132,6 +132,7 @@ tar -xpJf "ubuntu-${RELASE_VERSION}-preinstalled-${FLAVOR}-arm64.rootfs.tar.xz" 
 setup_mountpoint $chroot_dir
 
 # Update packages
+chroot $chroot_dir add-apt-repository ppa:jjriek/rockchip
 chroot $chroot_dir apt-get update
 chroot $chroot_dir apt-get -y upgrade
     
