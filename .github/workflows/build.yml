@@ -82,7 +82,7 @@ jobs:
     runs-on: self-hosted
     container:
       image: ubuntu:24.04
-      options: --cap-add=SYS_ADMIN --privileged
+      options: --cap-add=SYS_ADMIN --privileged --network host
     needs: [rootfs, kernel]
     name: Build image 
 
