@@ -22,7 +22,7 @@ function config_image_hook__radxa-zero3() {
             echo "blacklist aic8800_btlpm"
         ) > "${rootfs}/etc/modprobe.d/aic8800.conf"
 
-        chroot "${rootfs}" apt-get install -y software-properties-common mtd-utils
+        chroot "${rootfs}" apt-get install -y software-properties-common mtd-utils linux-base
         chroot "${rootfs}" add-apt-repository ppa:jjriek/rockchip
         # uname -r
         # chroot "${rootfs}" uname -r
