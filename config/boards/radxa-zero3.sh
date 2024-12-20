@@ -29,7 +29,7 @@ function config_image_hook__radxa-zero3() {
         echo "kernelsourcedir=/usr/src/linux-headers-6.1.0-1025-rockchip" > "${rootfs}/etc/dkms/framework.conf"
         
         # Install AIC8800 SDIO WiFi and Bluetooth DKMS
-        chroot "${rootfs}" apt-get -y install aic8800-firmware aic8800-sdio-dkms
+        chroot "${rootfs}" export KERNEL_SOURCE=/usr/src/linux-headers-6.1.0-1025-rockchip && apt-get -y install aic8800-firmware aic8800-sdio-dkms
 
         # shellcheck disable=SC2016
         echo 'SUBSYSTEM=="net", ACTION=="add", ATTR{address}=="88:00:*", NAME="$ENV{ID_NET_SLOT}"' > "${rootfs}/etc/udev/rules.d/99-radxa-aic8800.rules"
