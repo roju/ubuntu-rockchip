@@ -26,6 +26,7 @@ function config_image_hook__radxa-zero3() {
         chroot $chroot_dir add-apt-repository ppa:jjriek/rockchip
         
         uname -r
+        chroot $chroot_dir uname -r
         chroot $chroot_dir apt-mark hold linux-headers-6.8.0-31 linux-headers-6.8.0-31-generic linux-headers-generic
         chroot $chroot_dir apt-mark showhold
         chroot $chroot_dir apt-get -o Debug::pkgProblemResolver=true -o Debug::pkgDPkgPM install dkms
