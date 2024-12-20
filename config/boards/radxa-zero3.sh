@@ -25,7 +25,7 @@ function config_image_hook__radxa-zero3() {
         chroot $chroot_dir apt-get install -y software-properties-common
         chroot $chroot_dir add-apt-repository ppa:jjriek/rockchip
         chroot $chroot_dir apt-get update
-        chroot $chroot_dir apt-get -y install dkms
+        chroot $chroot_dir apt-get -y install --no-install-recommends dkms
         echo "kernel_source_dir=/usr/src/linux-headers-6.1.0-1025-rockchip" > "${rootfs}/etc/dkms/framework.conf"
         
         # Install AIC8800 SDIO WiFi and Bluetooth DKMS
