@@ -134,6 +134,17 @@ setup_mountpoint $chroot_dir
 # Update packages
 chroot $chroot_dir apt-get update
 chroot $chroot_dir apt-get -y upgrade
+
+echo "testfoo"
+chroot $chroot_dir apt-get install -y software-properties-common
+chroot $chroot_dir add-apt-repository ppa:jjriek/rockchip
+uname -r
+chroot $chroot_dir uname -r
+chroot $chroot_dir apt-mark hold linux-headers-6.8.0-31 linux-headers-6.8.0-31-generic linux-headers-generic
+chroot $chroot_dir apt-mark showhold
+chroot $chroot_dir apt-get -o Debug::pkgProblemResolver=true -o Debug::pkgDPkgPM install dkms
+echo "kernel_source_dir=/usr/src/linux-headers-6.1.0-1025-rockchip" > "${rootfs}/etc/dkms/framework.conf"
+cat ${rootfs}/etc/dkms/framework.conf
     
 # Run config hook to handle board specific changes
 if [[ $(type -t config_image_hook__"${BOARD}") == function ]]; then
