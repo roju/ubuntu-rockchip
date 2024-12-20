@@ -83,6 +83,8 @@ jobs:
     container:
       image: ubuntu:24.04
       options: --cap-add=SYS_ADMIN --privileged
+      volumes:
+        - /dev:/dev
     needs: [rootfs, kernel]
     name: Build image 
 
