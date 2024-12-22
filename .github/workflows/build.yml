@@ -123,7 +123,7 @@ jobs:
 
       - name: Build
         shell: bash
-        run: ./build.sh --board=${{ matrix.board }} --suite=${{ matrix.suite }} --flavor=${{ matrix.flavor }}
+        run: sudo ./build.sh --board=${{ matrix.board }} --suite=${{ matrix.suite }} --flavor=${{ matrix.flavor }}
 
       - name: Upload
         uses: actions/upload-artifact@v4.3.3
