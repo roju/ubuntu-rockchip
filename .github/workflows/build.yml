@@ -134,4 +134,4 @@ jobs:
 
       - name: Clean cache
         shell: bash
-        run: sync && rm -rf ./images/ ./build/ && sync
+        run: sync && sudo rm -rf ./images/ ./build/ && sync
