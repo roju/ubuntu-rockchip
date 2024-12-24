@@ -79,7 +79,7 @@ jobs:
             if-no-files-found: error
 
   build:
-    runs-on: ubuntu-22.04
+    runs-on: self-hosted
     needs: [rootfs, kernel]
     name: Build image
 
@@ -106,8 +106,7 @@ jobs:
           u-boot-tools debootstrap libssl-dev bc rsync kmod cpio xz-utils fakeroot parted \
           python3 python-is-python3 python3-pyelftools python3-setuptools \
           python3-distutils python3-pkg-resources libpython3-dev \
-          udev dosfstools uuid-runtime fdisk debhelper dctrl-tools \
-          qemu-user-static qemu-system-arm qemu-efi
+          udev dosfstools uuid-runtime fdisk debhelper dctrl-tools
 
 
       - name: Checkout rootfs
