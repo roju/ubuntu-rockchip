@@ -94,7 +94,7 @@ jobs:
 
     steps:
       - name: Delete repo directory with sudo
-        run: sudo rm -rf ~/actions-runner/_work/ubuntu-rockchip/ubuntu-rockchip
+        run: sudo rm -rf ~/actions-runner/_work/ubuntu-rockchip/ubuntu-rockchip/{*,.*}
     
       - name: Checkout code
         uses: actions/checkout@v4
